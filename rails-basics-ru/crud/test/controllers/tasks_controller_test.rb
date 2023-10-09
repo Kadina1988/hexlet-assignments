@@ -1,6 +1,18 @@
-require "test_helper"
+require_relative "../test_helper"
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @task = tasks(:one)
+    @attrs = {
+      name: Faker::Artist.name,
+      description: Faker::Movies::HarryPotter.quote,
+      status: Faker::Movies::HarryPotter.spell,
+      creator: Faker::Movies::HarryPotter.character,
+      performer: Faker::Movies::HarryPotter.character,
+      completed: true
+    }
+  end
+
   test 'should get index' do
     get tasks_path
     assert_response :success
@@ -13,22 +25,15 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
   test 'should create task' do
     assert_difference("Task.count") do
-      post '/tasks', params: { task: { name: 'Name',
-                                       description: 'Desk',
-                                       status: 'old',
-                                       creator: 'Joe',
-                                       performer: 'Jeck',
-                                       completed: true
-                                      }}
+      post '/tasks', params: { task: @attrs }
     end
     assert_redirected_to task_path(Task.last)
     assert_equal 'Task was created', flash[:success]
   end
 
   test 'should destroy task' do
-    task = tasks(:one)
     assert_difference("Task.count", -1) do
-      delete task_path(task)
+      delete task_path(@task)
     end
     assert_redirected_to tasks_path
   end
@@ -43,5 +48,4 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     task.reload
     assert_equal 'MyString', task.name
   end
-
 end
