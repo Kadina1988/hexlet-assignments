@@ -1,5 +1,6 @@
-class TasksController < ApplicationController
+# frozen_string_literal: true
 
+class TasksController < ApplicationController
   def index
     @tasks = Task.all
   end
@@ -44,6 +45,7 @@ class TasksController < ApplicationController
       redirect_to task_path(@task)
     end
   end
+
   private
 
   def task_params
@@ -52,7 +54,6 @@ class TasksController < ApplicationController
                                  :status,
                                  :creator,
                                  :performer,
-                                 :completed
-                                )
+                                 :completed)
   end
 end

@@ -1,4 +1,6 @@
-require_relative "../test_helper"
+# frozen_string_literal: true
+
+require_relative '../test_helper'
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -24,7 +26,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should create task' do
-    assert_difference("Task.count") do
+    assert_difference('Task.count') do
       post '/tasks', params: { task: @attrs }
     end
     assert_redirected_to task_path(Task.last)
@@ -32,7 +34,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should destroy task' do
-    assert_difference("Task.count", -1) do
+    assert_difference('Task.count', -1) do
       delete task_path(@task)
     end
     assert_redirected_to tasks_path
@@ -41,10 +43,10 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   test 'should update task' do
     task = tasks(:one)
     patch "/tasks/#{task.id}", params: { task: @attrs }
-  
+
     task.reload
-  
-    assert {task.name == @attrs[:name] }
+
+    assert { task.name == @attrs[:name] }
     assert_redirected_to task_url(task)
   end
 end
