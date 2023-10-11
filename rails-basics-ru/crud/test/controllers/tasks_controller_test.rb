@@ -40,12 +40,11 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
   test 'should update task' do
     task = tasks(:one)
-    # byebug
-    patch "/tasks/#{task.id}", params: { task: { name: '' } }
-    # assert_redirected_to edit_task_path(task)
-    assert_template :edit
-
+    patch "/tasks/#{task.id}", params: { task: @attrs }
+  
     task.reload
-    assert_equal 'MyString', task.name
+  
+    assert {task.name == @attrs[:name] }
+    assert_redirected_to task_url(task)
   end
 end
