@@ -8,7 +8,8 @@ gem 'rails', '~> 7.0'
 gem 'sqlite3'
 gem 'faker'
 gem 'rails-controller-testing'
-gem 'rubocop'
+gem 'rubocop', require: false
+gem 'rubocop-rails', require: false
 
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
