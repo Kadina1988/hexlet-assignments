@@ -14,7 +14,10 @@ class PostsController < ApplicationController
   end
 
   def create
+    @author = Author.create(author_params)
     @post = Post.new(post_params)
+    @post.author_id = @author.id
+
     @post.save
     redirect_to post_path(@post)
   end
@@ -39,5 +42,9 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:title, :body, :summary, :published)
+  end
+
+  def author_params
+    params.require(:post).require(:author).permit(:name)
   end
 end
