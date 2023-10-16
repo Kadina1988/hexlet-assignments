@@ -1,14 +1,12 @@
-# frozen_string_literal: true
-
-class CreateTasks < ActiveRecord::Migration[7.0]
+class CreateTasks < ActiveRecord::Migration[7.1]
   def change
     create_table :tasks do |t|
       t.string :name
       t.text :description
-      t.string :status, default: 'new'
+      t.string :status
       t.string :creator
       t.string :performer
-      t.boolean :completed, default: false
+      t.boolean :completed
 
       t.timestamps
     end

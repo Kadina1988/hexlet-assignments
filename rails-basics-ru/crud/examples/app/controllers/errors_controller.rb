@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class ErrorsController < ApplicationController
   # Для кастомного отображения ошибок
   def not_found
