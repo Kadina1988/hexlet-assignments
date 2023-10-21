@@ -1,0 +1,8 @@
+ru:
+  head: 'Заголовок Страницы'
+  show: Просмотр
+  edit: Изменить
+  destroy: Удалить
+  destroy_confirmation: Уверен?
+  back: Назад
+
