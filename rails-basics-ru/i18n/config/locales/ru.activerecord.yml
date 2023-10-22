@@ -10,8 +10,7 @@ ru:
       post:
         # BEGIN
         title: Название
-        body: Текст
-
+        body: Содержание
         # END
       post/comment:
         body: Содержание

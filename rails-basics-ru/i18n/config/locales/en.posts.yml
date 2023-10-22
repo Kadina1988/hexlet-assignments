@@ -1,4 +1,7 @@
-index:
+en:
+  posts:
+    # BEGIN
+    index:
       title: Posts
       table_title: Title
       new_post: New Post
@@ -25,3 +28,14 @@ index:
 
     destroy:
       success: Post was destroyed.
+    # END
+
+    comments:
+      edit:
+        title: Editing comment
+
+      create:
+        success: Comment was created.
+
+      update:
+        success: Comment was updated.

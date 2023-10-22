@@ -3,14 +3,13 @@ en:
     models:
       # BEGIN
       post: Post
-        title: Title
-        body: Body
       # END
       post/comment: Comment
     attributes:
       # BEGIN
-      title: Title
-      body: Body
+      post:
+        title: Title
+        body: Body
       # END
       post/comment:
         body: Body
@@ -21,5 +20,5 @@ en:
           attributes:
             # BEGIN
             title:
-              blank: should be filed
+              blank: should be filled
             # END

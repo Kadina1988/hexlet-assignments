@@ -1,4 +1,8 @@
-index:
+---
+ru:
+  posts:
+    # BEGIN
+    index:
       title: Посты
       table_title: Название
       new_post: Новый пост
@@ -27,3 +31,14 @@ index:
 
     destroy:
       success: Пост удален.
+    # END
+
+    comments:
+      edit:
+        title: Изменить комментарий
+
+      create:
+        success: Комментарий создан.
+
+      update:
+        success: Комментарий обновлен.

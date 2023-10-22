@@ -35,8 +35,3 @@ en:
   destroy: Delete
   destroy_confirmation: Are you sure?
   back: Back
-  head: 'Head Page'
-
-  layouts:
-    application:
-      hexlet_title: '© Hexlet, %{year}'
