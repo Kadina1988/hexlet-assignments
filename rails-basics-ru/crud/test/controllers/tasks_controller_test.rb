@@ -1,4 +1,4 @@
-require_relative "../test_helper"
+require "test_helper"
 
 class TasksControllerTest < ActionDispatch::IntegrationTest
   setup do
@@ -14,12 +14,12 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
   end
 
   test 'should get index' do
-    get tasks_path
+    get tasks_url
     assert_response :success
   end
 
   test 'should get action show' do
-    get task_path(tasks(:one))
+    get task_url(tasks(:one))
     assert_response :success
   end
 
@@ -27,14 +27,26 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Task.count') do
       post '/tasks', params: { task: @attrs }
     end
+
     assert_redirected_to task_path(Task.last)
     assert_equal 'Task was created', flash[:success]
+  end
+
+  test 'should new ' do
+    get new_task_url
+    assert_response :success
+  end
+
+  test 'should edit' do
+    get edit_task_url(@task)
+    assert_response :success
   end
 
   test 'should destroy task' do
     assert_difference('Task.count', -1) do
       delete task_path(@task)
     end
+
     assert_redirected_to tasks_path
   end
 
