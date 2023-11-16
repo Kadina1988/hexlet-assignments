@@ -5,16 +5,14 @@ require 'rack'
 class Router
   def call(env)
     # BEGIN
-    path = env['PATH_INFO']
-    if path == '/' || path == '/about'
-      status = 200
-      body  = 'string'
+    case req.path_info
+    when '/'
+      [200, { 'Content-Type' => 'text/html' }, ['Hello, World!']]
+    when '/about'
+      [200, { 'Content-Type' => 'text/html' }, ['About page']]
     else
-      status = 404
-      body = 'text'
+      [404, { 'Content-Type' => 'text/html' }, ['404 Not Found']]
     end
-    headers = { 'Context-Type' => 'text/plain'}
-    [status, headers, [body]]
     # END
   end
 end
