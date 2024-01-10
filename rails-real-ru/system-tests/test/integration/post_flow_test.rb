@@ -8,28 +8,28 @@ class PostFlowTest < ActionDispatch::IntegrationTest
     assert_select 'h1', 'Home#index'
   end
 
-  # test 'can create an post' do
-  #   get new_post_url
-  #   assert_response :success
+  test 'can create an post' do
+    get new_post_url
+    assert_response :success
 
-  #   params = {
-  #     post: {
-  #       title: Faker::Lorem.sentence,
-  #       body: Faker::Lorem.sentence
-  #     }
-  #   }
+    params = {
+      post: {
+        title: Faker::Lorem.sentence,
+        body: Faker::Lorem.sentence
+      }
+    }
 
-  #   post posts_url, params
+    post posts_url, params
 
-  #   post = Post.find_by params[:post]
+    post = Post.find_by params[:post]
 
-  #   assert { post }
-  #   assert_redirected_to post_url(post)
+    assert { post }
+    assert_redirected_to post_url(post)
 
-  #   follow_redirect!
+    follow_redirect!
 
-  #   assert_response :success
+    assert_response :success
 
-  #   assert_select 'h1', params.dig(:post, :title)
-  # end
+    assert_select 'h1', params.dig(:post, :title)
+  end
 end
