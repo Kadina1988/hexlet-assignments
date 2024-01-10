@@ -25,6 +25,7 @@ class PostsTest < ApplicationSystemTestCase
 
     fill_in 'Title', with: 'Creating a new Post'
     fill_in 'Body', with: 'Creating body'
+
     click_on 'Create Post'
 
     assert_text 'Post was successfully created.'
@@ -36,6 +37,7 @@ class PostsTest < ApplicationSystemTestCase
     find('#my-link').click
     fill_in 'Title', with: 'Update the Post'
     fill_in 'Body', with: 'new body'
+
     click_on 'Update'
 
     assert_text 'Post was successfully updated.'
