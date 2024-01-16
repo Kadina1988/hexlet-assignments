@@ -12,6 +12,6 @@ class PostsTest < ApplicationSystemTestCase
 
     found_posts = all('tbody tr')
 
-    assert { 1 == found_posts.count }
+    assert { found_posts.count == 1 }
   end
 end
