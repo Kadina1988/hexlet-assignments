@@ -1,8 +1,0 @@
-= simple_form_for @post do |f|
-  = f.input :title
-  = f.input :body
-  = f.input :summary
-  = f.input :published
-  = f.association :author do |a|
-    = a.input :name, required: false
-  = f.button :submit

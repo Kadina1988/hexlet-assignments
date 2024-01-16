@@ -1,4 +1,3 @@
-
 # require_relative 'boot'
 
 # В config/application.rb добавляем работу с SimpleForm
