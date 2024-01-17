@@ -7,7 +7,7 @@
   / BEGIN
   = search_form_for @q do |f|
     = f.input :title_cont
-    = f.input :aasm_state_eq, collection: Post.aasm.states.map { |i| i.name.to_s }
+    = f.input :aasm_state_eq
     = f.submit
   / END
 
