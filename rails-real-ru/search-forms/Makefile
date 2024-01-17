@@ -12,6 +12,6 @@ console:
 test:
 	yarn run build
 	yarn run build:css
-	bin/rails test
+	NODE_ENV=test bin/rails test
 
 .PHONY: test
