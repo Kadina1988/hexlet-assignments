@@ -1,0 +1,19 @@
+= content_for :title do
+  = @post.title
+p
+  strong.me-2 = t('.author')
+  = @post.author.name
+p
+  strong.me-2 = t('.body')
+  = @post.body
+
+hr
+
+.d-flex
+  / BEGIN
+  - if policy(@post).update?
+    = link_to 'edit', edit_post_path(@post)
+  - if policy(@post).destroy?
+      = button_to 'delete', post_path(@post), method: :delete
+  / END
+  = link_to t('back'), :back, class: 'btn btn-outline-primary'
