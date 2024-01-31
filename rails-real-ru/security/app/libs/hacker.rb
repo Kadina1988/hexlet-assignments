@@ -49,6 +49,3 @@ class Hacker
     # END
   end
 end
-
-
-
