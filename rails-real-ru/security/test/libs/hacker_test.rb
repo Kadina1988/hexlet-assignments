@@ -25,7 +25,6 @@ class HackerTest < ActiveSupport::TestCase
       .to_return(status: 302)
 
     response = Hacker.hack('test@test.io', 'password')
-
     assert response
   end
 end
