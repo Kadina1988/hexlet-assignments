@@ -1,0 +1,12 @@
+*.lock
+vendor/
+package-lock.json
+Gemfile.lock
+node_modules/
+tmp/
+!.keep
+*.log
+!*/assignment/app/assets/builds/application.css
+!*/assignment/app/assets/builds/application.js
+
+OCTOCIT_TOKEN = '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'
